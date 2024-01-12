@@ -2,6 +2,7 @@
 
 - `yarn build` – Compile Contracts
 - `yarn test` – Run Tests
+- `yarn deploy` – Run Deploy Scripts
 - `yarn test:watch` – Run Tests in Watchmode (run when files change)
 - `yarn coverage` – Display Code Coverage
 - `yarn typechain` – Update Types
@@ -22,7 +23,7 @@ yarn add --dev @vechain/web3-providers-connex @vechain/hardhat-vechain @vechain/
 
 # Init Dependencies & Helpers
 yarn add @openzeppelin/contracts@4 @openzeppelin/contracts-upgradeable@4 @openzeppelin/hardhat-upgrades
-yarn add --dev dotenv
+yarn add --dev dotenv hardhat-deploy@npm:@vechain.energy/hardhat-deploy@0.11.45
 ```
 
 ```ts
@@ -30,6 +31,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import '@openzeppelin/hardhat-upgrades';
 import "@vechain/hardhat-vechain";
 import '@vechain/hardhat-ethers';
+import 'hardhat-deploy';
 import 'dotenv/config';
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
