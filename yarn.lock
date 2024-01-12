@@ -2684,6 +2684,7 @@ __metadata:
     "@vechain/hardhat-web3": ^0.1.4
     "@vechain/web3-providers-connex": ^1.1.2
     chai: ^4.2.0
+    dotenv: ^16.3.1
     ethers: ^6.4.0
     hardhat: ^2.19.4
     hardhat-gas-reporter: ^1.0.8
@@ -2846,6 +2847,13 @@ __metadata:
   dependencies:
     path-type: ^4.0.0
   checksum: fa05e18324510d7283f55862f3161c6759a3f2f8dbce491a2fc14c8324c498286c54282c1f0e933cb930da8419b30679389499b919122952a4f8592362ef4615
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.3.1":
+  version: 16.3.1
+  resolution: "dotenv@npm:16.3.1"
+  checksum: 15d75e7279018f4bafd0ee9706593dd14455ddb71b3bcba9c52574460b7ccaf67d5cf8b2c08a5af1a9da6db36c956a04a1192b101ee102a3e0cf8817bbcf3dfd
   languageName: node
   linkType: hard
 

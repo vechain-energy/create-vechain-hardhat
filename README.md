@@ -9,23 +9,34 @@
 # Setup
 
 ```shell
+# Init Project
 yarn init -y
 yarn config set nodeLinker node-modules
+
+# Init Hardhat
 yarn add --dev hardhat
 npx hardhat init
+
+# Init Vechain
 yarn add --dev @vechain/web3-providers-connex @vechain/hardhat-vechain @vechain/hardhat-web3 @vechain/hardhat-ethers
+
+# Init Dependencies & Helpers
 yarn add @openzeppelin/contracts@4 @openzeppelin/contracts-upgradeable@4 @openzeppelin/hardhat-upgrades
+yarn add --dev dotenv
 ```
 
 ```ts
 import "@nomicfoundation/hardhat-toolbox";
-import "@openzeppelin/hardhat-upgrades";
+import '@openzeppelin/hardhat-upgrades';
 import "@vechain/hardhat-vechain";
-import "@vechain/hardhat-ethers";
+import '@vechain/hardhat-ethers';
+import 'dotenv/config';
 
-const PRIVATE_KEY =
-  process.env.PRIVATE_KEY ??
-  "8ebab39c89ab125019923e0a7fdbae2febfd88de2ae5a5b87930b2c2532d234e";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+if(!PRIVATE_KEY) {
+  throw new Error('Please set your PRIVATE_KEY in a .env file');
+}
 
 const config = {
   solidity: "0.8.19",
@@ -35,12 +46,12 @@ const config = {
       accounts: [PRIVATE_KEY],
       restful: true,
       gas: 10000000,
-
+      
       // optionally use fee delegation to let someone else pay the gas fees
       // visit vechain.energy for a public fee delegation service
       delegate: {
-        url: "https://sponsor-testnet.vechain.energy/by/90",
-      },
+        url: "https://sponsor-testnet.vechain.energy/by/90"
+      }
     },
     vechain_mainnet: {
       url: "https://node-mainnet.vechain.energy",

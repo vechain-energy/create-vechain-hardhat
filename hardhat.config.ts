@@ -2,8 +2,13 @@ import "@nomicfoundation/hardhat-toolbox";
 import '@openzeppelin/hardhat-upgrades';
 import "@vechain/hardhat-vechain";
 import '@vechain/hardhat-ethers';
+import 'dotenv/config';
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY ?? '8ebab39c89ab125019923e0a7fdbae2febfd88de2ae5a5b87930b2c2532d234e';
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+if(!PRIVATE_KEY) {
+  throw new Error('Please set your PRIVATE_KEY in a .env file or in your environment variables');
+}
 
 const config = {
   solidity: "0.8.19",
