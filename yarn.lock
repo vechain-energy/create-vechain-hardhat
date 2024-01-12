@@ -2662,6 +2662,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"create-vechain-hardhat@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "create-vechain-hardhat@workspace:."
+  dependencies:
+    "@nomicfoundation/hardhat-chai-matchers": ^2.0.0
+    "@nomicfoundation/hardhat-ethers": ^3.0.0
+    "@nomicfoundation/hardhat-network-helpers": ^1.0.0
+    "@nomicfoundation/hardhat-toolbox": ^3.0.0
+    "@nomicfoundation/hardhat-verify": ^1.0.0
+    "@openzeppelin/contracts": 4
+    "@openzeppelin/contracts-upgradeable": 4
+    "@openzeppelin/hardhat-upgrades": ^3.0.2
+    "@typechain/ethers-v6": ^0.4.0
+    "@typechain/hardhat": ^8.0.0
+    "@types/chai": ^4.2.0
+    "@types/mocha": ">=9.1.0"
+    "@types/node": ">=16.0.0"
+    "@vechain/hardhat-ethers": ^0.1.6
+    "@vechain/hardhat-vechain": ^0.1.7
+    "@vechain/hardhat-web3": ^0.1.4
+    "@vechain/web3-providers-connex": ^1.1.2
+    chai: ^4.2.0
+    ethers: ^6.4.0
+    hardhat: ^2.19.4
+    hardhat-gas-reporter: ^1.0.8
+    solidity-coverage: ^0.8.0
+    ts-node: ">=8.0.0"
+    typechain: ^8.1.0
+    typescript: ">=4.5.0"
+  languageName: unknown
+  linkType: soft
+
 "cross-spawn@npm:^7.0.0":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -6625,38 +6657,6 @@ __metadata:
   checksum: db4d9fe74a2082c3a5016630092c54c8375ff3b280186938cfd104f2e089c4fd9bad58688ef6be9cf186a889671bf355c7cda38f09bbf60604b281715ca57f5c
   languageName: node
   linkType: hard
-
-"template-hardhat@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "template-hardhat@workspace:."
-  dependencies:
-    "@nomicfoundation/hardhat-chai-matchers": ^2.0.0
-    "@nomicfoundation/hardhat-ethers": ^3.0.0
-    "@nomicfoundation/hardhat-network-helpers": ^1.0.0
-    "@nomicfoundation/hardhat-toolbox": ^3.0.0
-    "@nomicfoundation/hardhat-verify": ^1.0.0
-    "@openzeppelin/contracts": 4
-    "@openzeppelin/contracts-upgradeable": 4
-    "@openzeppelin/hardhat-upgrades": ^3.0.2
-    "@typechain/ethers-v6": ^0.4.0
-    "@typechain/hardhat": ^8.0.0
-    "@types/chai": ^4.2.0
-    "@types/mocha": ">=9.1.0"
-    "@types/node": ">=16.0.0"
-    "@vechain/hardhat-ethers": ^0.1.6
-    "@vechain/hardhat-vechain": ^0.1.7
-    "@vechain/hardhat-web3": ^0.1.4
-    "@vechain/web3-providers-connex": ^1.1.2
-    chai: ^4.2.0
-    ethers: ^6.4.0
-    hardhat: ^2.19.4
-    hardhat-gas-reporter: ^1.0.8
-    solidity-coverage: ^0.8.0
-    ts-node: ">=8.0.0"
-    typechain: ^8.1.0
-    typescript: ">=4.5.0"
-  languageName: unknown
-  linkType: soft
 
 "then-request@npm:^6.0.0":
   version: 6.0.2
