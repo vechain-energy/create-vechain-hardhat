@@ -81,5 +81,11 @@ export default config;
 # Deploy
 
 ```shell
-npx hardhat run --network vechain_testnet scripts/deploy.ts
+npx hardhat deploy --network vechain_testnet
+```
+
+or by tags
+
+```shell
+npx hardhat deploy --network vechain_testnet --tags <tag>
 ```
