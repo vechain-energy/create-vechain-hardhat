@@ -11,7 +11,18 @@ if (!PRIVATE_KEY) {
   throw new Error('Please set your PRIVATE_KEY in a .env file or in your environment variables');
 }
 
-const accounts = [PRIVATE_KEY, process.env.DEPLOYER_PRIVATE_KEY ?? PRIVATE_KEY, process.env.OWNER_PRIVATE_KEY ?? PRIVATE_KEY]
+const accounts = [
+  PRIVATE_KEY, // deployer
+  process.env.DEPLOYER_PRIVATE_KEY ?? PRIVATE_KEY, // proxyOwner
+  process.env.OWNER_PRIVATE_KEY ?? PRIVATE_KEY, // owner
+];
+
+// see https://github.com/wighawag/hardhat-deploy?tab=readme-ov-file#1-namedaccounts-ability-to-name-addresses
+const namedAccounts = {
+  deployer: { default: 0 },
+  proxyOwner: { default: 1 },
+  owner: { default: 2 },
+};
 
 const config = {
   solidity: "0.8.19",
@@ -37,18 +48,7 @@ const config = {
       gas: 10000000,
     },
   },
-
-  namedAccounts: {
-    deployer: {
-      default: 0
-    },
-    proxyOwner: {
-      default: 1
-    },
-    owner: {
-      default: 2
-    }
-  }
+  namedAccounts
 };
 
 export default config;

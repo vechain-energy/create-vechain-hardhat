@@ -28,50 +28,58 @@ yarn add --dev dotenv hardhat-deploy@npm:@vechain.energy/hardhat-deploy@latest
 
 ```ts
 import "@nomicfoundation/hardhat-toolbox";
-import '@openzeppelin/hardhat-upgrades';
+import "@openzeppelin/hardhat-upgrades";
 import "@vechain/hardhat-vechain";
-import '@vechain/hardhat-ethers';
-import 'hardhat-deploy';
-import 'dotenv/config';
+import "@vechain/hardhat-ethers";
+import "hardhat-deploy";
+import "dotenv/config";
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 if (!PRIVATE_KEY) {
-  throw new Error('Please set your PRIVATE_KEY in a .env file or in your environment variables');
+  throw new Error(
+    "Please set your PRIVATE_KEY in a .env file or in your environment variables"
+  );
 }
+
+const accounts = [
+  PRIVATE_KEY, // deployer
+  process.env.DEPLOYER_PRIVATE_KEY ?? PRIVATE_KEY, // proxyOwner
+  process.env.OWNER_PRIVATE_KEY ?? PRIVATE_KEY, // owner
+];
+
+// see https://github.com/wighawag/hardhat-deploy?tab=readme-ov-file#1-namedaccounts-ability-to-name-addresses
+const namedAccounts = {
+  deployer: { default: 0 },
+  proxyOwner: { default: 1 },
+  owner: { default: 2 },
+};
 
 const config = {
   solidity: "0.8.19",
   networks: {
     vechain_testnet: {
       url: "https://node-testnet.vechain.energy",
-      accounts: [PRIVATE_KEY, process.env.DEPLOYER_PRIVATE_KEY ?? PRIVATE_KEY],
+      accounts,
       restful: true,
       gas: 10000000,
 
       // optionally use fee delegation to let someone else pay the gas fees
       // visit vechain.energy for a public fee delegation service
       delegate: {
-        url: "https://sponsor-testnet.vechain.energy/by/90"
+        url: "https://sponsor-testnet.vechain.energy/by/90",
       },
       loggingEnabled: true,
     },
     vechain_mainnet: {
       url: "https://node-mainnet.vechain.energy",
-      accounts: [PRIVATE_KEY, process.env.DEPLOYER_PRIVATE_KEY ?? PRIVATE_KEY],
+      accounts,
       restful: true,
       gas: 10000000,
     },
   },
 
-  namedAccounts: {
-    deployer: {
-      default: 1
-    },
-    proxyOwner: {
-      default: 1
-    },
-  }
+  namedAccounts,
 };
 
 export default config;
