@@ -24,6 +24,7 @@ yarn add --dev @vechain/web3-providers-connex @vechain/hardhat-vechain @vechain/
 # Init Dependencies & Helpers
 yarn add @openzeppelin/contracts@4 @openzeppelin/contracts-upgradeable@4 @openzeppelin/hardhat-upgrades
 yarn add --dev dotenv hardhat-deploy@npm:@vechain.energy/hardhat-deploy@latest
+yarn add @ensdomains/ens-contracts
 ```
 
 ```ts
@@ -75,4 +76,10 @@ const config = {
 };
 
 export default config;
+```
+
+# Deploy
+
+```shell
+npx hardhat run --network vechain_testnet scripts/deploy.ts
 ```
