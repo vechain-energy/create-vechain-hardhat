@@ -2687,7 +2687,7 @@ __metadata:
     dotenv: ^16.3.1
     ethers: ^6.4.0
     hardhat: ^2.19.4
-    hardhat-deploy: "npm:@vechain.energy/hardhat-deploy@0.11.45"
+    hardhat-deploy: "npm:@vechain.energy/hardhat-deploy@latest"
     hardhat-gas-reporter: ^1.0.8
     solidity-coverage: ^0.8.0
     ts-node: ">=8.0.0"
@@ -3886,9 +3886,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hardhat-deploy@npm:@vechain.energy/hardhat-deploy@0.11.45":
-  version: 0.11.45
-  resolution: "@vechain.energy/hardhat-deploy@npm:0.11.45"
+"hardhat-deploy@npm:@vechain.energy/hardhat-deploy@latest":
+  version: 0.11.46
+  resolution: "@vechain.energy/hardhat-deploy@npm:0.11.46"
   dependencies:
     "@ethersproject/abi": ^5.7.0
     "@ethersproject/abstract-signer": ^5.7.0
@@ -3914,7 +3914,7 @@ __metadata:
     murmur-128: ^0.2.1
     qs: ^6.9.4
     zksync-web3: ^0.14.3
-  checksum: 7fdac2f82a8d4bd1376ef27063a3b0a6fb7c9eb75b9d2ec8bb1761a5f740296c2c7292423f68233a4bc3a907c0a048113e2ada86c83279160755beb7758d5091
+  checksum: 2e3036a44b2bb5128e66f0834d3b51ce345e2cf580526080cf9e0c7b820dffb8b82ffb069ffeef75e0ec4ed44714c3be89b8bfc33ddefdb856eec319243abb48
   languageName: node
   linkType: hard
 

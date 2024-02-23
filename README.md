@@ -23,7 +23,7 @@ yarn add --dev @vechain/web3-providers-connex @vechain/hardhat-vechain @vechain/
 
 # Init Dependencies & Helpers
 yarn add @openzeppelin/contracts@4 @openzeppelin/contracts-upgradeable@4 @openzeppelin/hardhat-upgrades
-yarn add --dev dotenv hardhat-deploy@npm:@vechain.energy/hardhat-deploy@0.11.45
+yarn add --dev dotenv hardhat-deploy@npm:@vechain.energy/hardhat-deploy@latest
 ```
 
 ```ts

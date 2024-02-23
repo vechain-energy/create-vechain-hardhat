@@ -7,4 +7,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         from: deployer
     })
 };
+
+func.id = 'mytoken'; // name your deployment
+func.tags = ['regular']
+
 export default func;

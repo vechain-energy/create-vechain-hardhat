@@ -45,4 +45,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     const MyTokenUpgradeable = await hre.deployments.get('MyTokenUpgradeable');
     console.log('MyTokenUpgradeable is available at', MyTokenUpgradeable.address)
 };
+
+func.id = 'mytoken-upgradeable'; // name your deployment
+func.tags = ['upgradeable', 'mytoken']; // tag your deployment, to run certain tags only
+func.dependencies = ['regular']; // build a dependency tree based on tags, to run deployments in a certain order
+
 export default func;
