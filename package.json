@@ -21,6 +21,7 @@
     "dotenv": "^16.3.1",
     "ethers": "^6.4.0",
     "hardhat": "^2.19.4",
+    "hardhat-deploy": "npm:@vechain.energy/hardhat-deploy@latest",
     "hardhat-gas-reporter": "^1.0.8",
     "solidity-coverage": "^0.8.0",
     "ts-node": ">=8.0.0",
@@ -38,6 +39,7 @@
     "test": "hardhat test",
     "test:watch": "nodemon -e sol,ts --watch contracts --watch test --exec 'hardhat compile; hardhat typechain; hardhat test'",
     "coverage": "hardhat coverage",
-    "typechain": "hardhat typechain"
+    "typechain": "hardhat typechain",
+    "deploy": "hardhat deploy"
   }
 }
