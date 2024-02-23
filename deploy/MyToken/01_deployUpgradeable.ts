@@ -47,7 +47,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 };
 
 func.id = 'mytoken-upgradeable'; // name your deployment
-func.tags = ['upgradeable', 'mytoken']; // tag your deployment, to run certain tags only
+func.tags = ['upgradeable']; // tag your deployment, to run certain tags only
 func.dependencies = ['regular']; // build a dependency tree based on tags, to run deployments in a certain order
 
 export default func;
