@@ -15,6 +15,7 @@ const accounts = [PRIVATE_KEY, process.env.DEPLOYER_PRIVATE_KEY ?? PRIVATE_KEY, 
 
 const config = {
   solidity: "0.8.19",
+  defaultNetwork: "vechain_testnet",
   networks: {
     vechain_testnet: {
       url: "https://node-testnet.vechain.energy",
