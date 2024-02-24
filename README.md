@@ -99,6 +99,41 @@ npx hardhat deploy --network vechain_testnet --tags <tag>
 
 with custom environments:
 
+read more about dotenvx on https://www.npmjs.com/package/dotenv#-manage-multiple-environments
+
 ```shell
 npx dotenvx run --env-file=<env file> -- npx hardhat deploy --network vechain_testnet
+```
+
+## .env Vault
+
+- `npx dotenv encrypt` – Encrypts your current `.env` file and stores a `.env.vault` file, which can be decoded with a secret that is print by the command
+- `DOTENV_KEY=<key> npx dotenvx run -- yarn deploy` – Restores the `.env` and executes the given command
+- Read more at: https://www.npmjs.com/package/dotenv#dotenv-vault-1
+
+### Example
+
+```shell
+# encrypt your .env
+$ npx dotenvx encrypt
+✔ encrypted to .env.vault (.env,.env.example,.env.test)
+ℹ commit .env.vault to code: [git commit -am ".env.vault"]
+✔ keys added to .env.keys (DOTENV_KEY_DEVELOPMENT,DOTENV_KEY_EXAMPLE,DOTENV_KEY_TEST)
+ℹ push .env.keys up to hub: [dotenvx hub push]
+ℹ run [DOTENV_KEY='dotenv://:key_63d249a48829f1918817babcdf6432acdbad12a0e37e1dd41a1964c9afbed0ba@dotenvx.com/vault/.env.vault?environment=test' dotenvx run -- yourcommand] to test decryption locally
+
+# delete .env for testing purpose
+$ rm .env
+
+# restore .env with DOTENV_KEY as encryption key
+# .env.vault can be checked into your repo
+$ DOTENV_KEY='dotenv://:key_63d249a48829f1918817babcdf6432acdbad12a0e37e1dd41a1964c9afbed0ba@dotenvx.com/vault/.env.vault?environment=test' npx dotenvx run -- yarn deploy
+[dotenvx@0.20.0] injecting env (3) from encrypted .env.vault
+[dotenv@16.4.5][INFO] Loading env from encrypted .env.vault
+Nothing to compile
+No need to generate any newer typings.
+reusing "MyTokenUpgradeable_Implementation" at 0x481c1d93B5E3F563bA76Af878b186f22C3b91B89
+Owner already has UPGRADER_ROLE
+MyTokenUpgradeable is available at 0x1cD719Cb3C02f5c6b83F8b342075A6EE52b9C166
+Syncing name for 0x0c8c789a88b22B80225c272E021b881833114eA1 to nft.insecure.demo.vet, owned by 0xa9B9001aA9182B999D2c05FA5616590C7212F919
 ```

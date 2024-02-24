@@ -21,3 +21,8 @@ typechain-types
 cache
 artifacts
 
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
