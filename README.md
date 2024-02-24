@@ -23,7 +23,7 @@ yarn add --dev @vechain/web3-providers-connex @vechain/hardhat-vechain @vechain/
 
 # Init Dependencies & Helpers
 yarn add @openzeppelin/contracts@4 @openzeppelin/contracts-upgradeable@4 @openzeppelin/hardhat-upgrades @ensdomains/ens-contracts
-yarn add --dev dotenv hardhat-deploy@npm:@vechain.energy/hardhat-deploy@latest
+yarn add --dev dotenv @dotenvx/dotenvx hardhat-deploy@npm:@vechain.energy/hardhat-deploy@latest
 ```
 
 ```ts
@@ -95,4 +95,10 @@ or by tags
 
 ```shell
 npx hardhat deploy --network vechain_testnet --tags <tag>
+```
+
+with custom environments:
+
+```shell
+npx dotenvx run --env-file=<env file> -- npx hardhat deploy --network vechain_testnet
 ```

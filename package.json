@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
+    "@dotenvx/dotenvx": "^0.20.0",
     "@ensdomains/ens-contracts": "^1.1.4",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
@@ -19,7 +20,6 @@
     "@vechain/hardhat-web3": "^0.1.4",
     "@vechain/web3-providers-connex": "^1.1.2",
     "chai": "^4.2.0",
-    "dotenv": "^16.3.1",
     "ethers": "^6.4.0",
     "hardhat": "^2.19.4",
     "hardhat-deploy": "npm:@vechain.energy/hardhat-deploy@latest",
@@ -32,7 +32,8 @@
   "dependencies": {
     "@openzeppelin/contracts": "4",
     "@openzeppelin/contracts-upgradeable": "4",
-    "@openzeppelin/hardhat-upgrades": "^3.0.2"
+    "@openzeppelin/hardhat-upgrades": "^3.0.2",
+    "dotenv": "^16.4.5"
   },
   "scripts": {
     "build": "hardhat compile",
