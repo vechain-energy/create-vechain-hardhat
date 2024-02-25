@@ -7,7 +7,7 @@
 - `yarn coverage` – Display Code Coverage
 - `yarn typechain` – Update Types
 
-# Setup
+# Project Setup
 
 ```shell
 # Init Project
@@ -87,23 +87,32 @@ export default config;
 
 # Deploy
 
-```shell
-npx hardhat deploy --network vechain_testnet
-```
+Private keys are sourced from environment variables. By default, the `.env` file is utilized (refer to `.env.example` for an example). Encryption is facilitated through [dotenvx](https://www.npmjs.com/package/dotenv#-manage-multiple-environments) and is enabled by setting the environment variable `DOTENV_KEY`.
 
-or by tags
+**Deploy to Vechain TestNet:**
 
 ```shell
-npx hardhat deploy --network vechain_testnet --tags <tag>
+yarn deploy --network vechain_testnet
 ```
 
-with custom environments:
+**Deploy to the Vechain TestNet, specifying deploy scripts by tag:**
 
-read more about dotenvx on https://www.npmjs.com/package/dotenv#-manage-multiple-environments
+```shell
+yarn deploy --network vechain_testnet --tags <tag>
+```
+
+**Deploy to Vechain MainNet using an encrypted vault:**
+
+```shell
+DOTENV_KEY=<key> yarn deploy --network vechain_testnet --tags <tag>
+```
+
+**Use custom environment files:**
 
 ```shell
 npx dotenvx run --env-file=<env file> -- npx hardhat deploy --network vechain_testnet
 ```
+_read more about dotenvx on https://www.npmjs.com/package/dotenv#-manage-multiple-environments_
 
 ## .env Vault
 

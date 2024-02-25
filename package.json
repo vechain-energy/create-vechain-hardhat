@@ -41,6 +41,6 @@
     "test:watch": "nodemon -e sol,ts --watch contracts --watch test --exec 'hardhat compile; hardhat typechain; hardhat test'",
     "coverage": "hardhat coverage",
     "typechain": "hardhat typechain",
-    "deploy": "hardhat deploy"
+    "deploy": "npx dotenvx run -- hardhat deploy"
   }
 }
